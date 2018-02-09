@@ -107,7 +107,7 @@ $(".link-home").on('click', function(event){
 //==============___Blog - Ajax___================
 function loadPost(){
    $.ajax({
-      url: 'single.html', // URL HERE
+      url: 'connectcalc.html', // URL HERE
       type: 'GET',
       success: function(html) {
 
@@ -127,6 +127,28 @@ $(".loadPost").on('click', function(event){
   loadPost();
 });
 
+//=====AJAX Post 2=======    
+function loadPost2(){
+   $.ajax({
+      url: 'single.html', // URL HERE
+      type: 'GET',
+      success: function(html) {
+
+        var $lis = $(html).find('#blogPost'); // Loads the content inside #blogPost div
+
+        $("#postHere").html($lis);
+    }
+  });
+}
+
+$(".loadPost2").on('click', function(event){
+  event.preventDefault();
+  //$("#postHere").html('loading...');
+  $('.section-page-active').removeClass('section-page-active');
+  $('#page-blog-single').addClass('section-page-active');
+  pageOn();
+  loadPost2();
+});    
 //==============___Contact Form Validator and Ajax Sender___================
   $("#contactForm").validate({
     submitHandler: function(form) {
