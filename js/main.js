@@ -130,7 +130,7 @@ $(".loadPost").on('click', function(event){
 //=====AJAX Post 2=======    
 function loadPost2(){
    $.ajax({
-      url: 'single.html', // URL HERE
+      url: 'connect.html', // URL HERE
       type: 'GET',
       success: function(html) {
 
